@@ -1,6 +1,14 @@
 # TodoAngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+Basic Web App with HttpClient and RxJS
+Client - Angular HttpClient version 8.3.2
+Server - (Fake) JSON REST API
+
+#Install dependencies
+
+cd server => npm run server
+cd todo-angular => npm i => ng serve
 
 ## Development server
 

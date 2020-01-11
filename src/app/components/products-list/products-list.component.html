@@ -1,0 +1,47 @@
+<div class="container-product">
+  <mat-spinner *ngIf="!products?.length"></mat-spinner>
+  <div *ngIf="products?.length < 0" class="alert alert-warning" role="alert">
+    <p>No matching products found.</p>
+  </div>
+
+  <div class="content-product" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+       fxLayoutAlign="center">
+
+    <mat-card *ngFor="let product of products" fxFlex="20%">
+      <mat-card-header>
+        <mat-card-title>
+          <a routerLink="{{ product?.id }}" routerLinkActive="active"> #{{product.id}} {{product.name}}</a>
+          <!--#{{product.id}} {{product.name}}-->
+        </mat-card-title>
+        <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{product.description}}
+        </p>
+        <img src="{{ product.imageUrl }}"/>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center">
+        <button mat-button color="primary"> Buy product</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="pagination">
+  <div fxLayoutAlign="center" fxLayoutGap="20px">
+    <button (click)="firstPage()" mat-button><i class="material-icons">
+      first_page
+    </i></button>
+    <button (click)="previousPage()" mat-button><i class="material-icons">
+      chevron_left
+    </i></button>
+    <button (click)="nextPage()" mat-button><i class="material-icons">
+      chevron_right
+    </i></button>
+    <button (click)="lastPage()" mat-button><i class="material-icons">
+      last_page
+    </i></button>
+  </div>
+</div>
