@@ -1,0 +1,108 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+    <h1>Logo</h1>
+    <div class="toolbar-separator"></div>
+  </div>
+  <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="end center">
+    <mat-menu #appSettingsMenu="matMenu">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+      <button mat-menu-item (click)="signOut()">Logout</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="appSettingsMenu">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <img class="avatar mr-0 mr-sm-16" src="assets/images/users.png">
+        <!--<span class="username mr-12">De NU</span>-->
+        <mat-icon>
+          keyboard_arrow_down
+        </mat-icon>
+      </div>
+    </button>
+
+    <div class="toolbar-separator"></div>
+    <button aria-haspopup="true" mat-button class="language-button">
+      <div fxLayout="row" fxLayoutAlign="center center"><img
+        class="flag mr-16" src="assets/images/flag_ro.png"><span class="iso text-uppercase">ro</span></div>
+    </button>
+    <div class="toolbar-separator"></div>
+    <button aria-label="Toggle chat panel" mat-button>
+      <mat-icon>chat
+      </mat-icon>
+    </button>
+    <div class="toolbar-separator"></div>
+    <button mat-button>
+      <mat-icon (click)="openRightPanel = !openRightPanel">format_list_bulleted</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<div fxLayout="column" fxLayoutAlign="start start" class="panel-right" *ngIf="openRightPanel">
+  <mat-list class="mat-list-header">
+    <h3 class="mat-subheader"><span>Today</span></h3>
+    <div class="secondary-text mat-display-1 mb-0 p-16">
+      <div class="mb-12">Monday</div>
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <span> 3</span><span class="mat-subheading-1">th</span><span> February</span></div>
+    </div>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <mat-list><h3 class="mat-subheader"><span>Events</span></h3>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-text"><h3 class="mat-line">Group Meeting</h3>
+          <p class="secondary-text mat-line">In 32 Minutes, Room 1B</p></div>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-text"><h3 class="mat-line">Lunch</h3>
+          <p class="secondary-text mat-line">12:00 PM</p></div>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-text"><h3 class="mat-line">School</h3>
+          <p class="secondary-text mat-line">17:30 PM</p></div>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-text"><h3 class="mat-line">Q&amp;A Session</h3>
+          <p class="secondary-text mat-line">20:30 PM</p></div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <mat-list><h3 class="mat-subheader" matsubheader=""><span>Notes</span></h3>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-item-ripple"></div>
+        <div class="mat-list-text"><h3 class="mat-line">Best songs to listen while working</h3>
+          <p class="secondary-text mat-line">Last edit: May 8th, 2018</p></div>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="mat-list-item-content">
+        <div class="mat-list-item-ripple mat-ripple"></div>
+        <div class="mat-list-text"><h3 class="mat-line">Useful subreddits</h3>
+          <p class="secondary-text mat-line">Last edit: January 12th, 2018</p></div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <h3 class="mat-subheader"><span>Quick Settings</span></h3>
+    <mat-list-item role="listitem">
+      <mat-slide-toggle>Notifications</mat-slide-toggle>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <mat-slide-toggle>Cloud Sync</mat-slide-toggle>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <mat-slide-toggle>Retro Thrusters</mat-slide-toggle>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div class="overlay" (click)="openRightPanel = !openRightPanel" *ngIf="openRightPanel"></div>

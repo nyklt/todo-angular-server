@@ -1,0 +1,28 @@
+:host {
+  .mat-list-item {
+    height: 40px;
+    padding: 0 12px 0 24px;
+    margin-right: 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: currentColor;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .04);
+    }
+  }
+
+  .mat-toolbar-single-row {
+    padding: 0;
+  }
+}

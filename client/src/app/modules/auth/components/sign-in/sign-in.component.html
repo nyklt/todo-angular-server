@@ -1,0 +1,110 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <span>Todo-angular-app</span>
+</mat-toolbar>
+<div fxFill fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="40" fxlayoutAlign="center center" class="right-side">
+    <div class="container">
+      <div class="tab-slider--nav">
+        <ul class="tab-slider--tabs">
+          <li class="tab-slider--trigger" [class.active]="viewMode === 'SignIn'" rel="tab1" (click)="viewMode ='SignIn'">
+            Sign In
+          </li>
+          <li class="tab-slider--trigger" [class.active]="viewMode === 'SignUp'" rel="tab2" (click)="viewMode ='SignUp'">
+            Sign Up
+          </li>
+        </ul>
+      </div>
+      <div class="tab-slider--container" [ngSwitch]="viewMode">
+        <div id="tab1" class="tab-slider--body" *ngSwitchCase="'SignIn'">
+          <mat-card>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Username" [formControl]="signInObj.username" required>
+              </label>
+              <mat-error *ngIf="signInObj.username.invalid">{{getErrorMessage(signInObj.username)}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Password" type="password" [formControl]="signInObj.password" required>
+              </label>
+              <mat-error *ngIf="signInObj.password.invalid">{{getErrorMessage(signInObj.password)}}</mat-error>
+            </mat-form-field>
+
+            <mat-card-actions>
+              <button mat-raised-button [disabled]="signInObj.username.invalid || signInObj.password.invalid"
+                      (click)="signIn()" color="primary">Sign in
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div id="tab2" class="tab-slider--body" *ngSwitchCase="'SignUp'">
+          <mat-card class="signup-card">
+            <mat-card-content>
+              <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="FirstName" formControlName="firstName">
+                  </label>
+                </mat-form-field>
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="LastName" formControlName="lastName">
+                  </label>
+                </mat-form-field>
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="Username" formControlName="username">
+                  </label>
+                  <mat-error *ngIf="signUpForm.get('username').touched && signUpForm.get('username').invalid">Invalid
+                    username!
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="Age" formControlName="age">
+                  </label>
+                </mat-form-field>
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="Email" formControlName="email">
+                  </label>
+                  <mat-error *ngIf="signUpForm.get('email').touched && signUpForm.get('email').invalid">Invalid email!
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <label>
+                    <input matInput placeholder="Password" type="password" formControlName="password">
+                  </label>
+                  <mat-error *ngIf="signUpForm.get('password').touched && signUpForm.get('password').invalid">Invalid
+                    password!
+                  </mat-error>
+                </mat-form-field>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" [disabled]="signUpForm.invalid">Sign up</button>
+                </mat-card-actions>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="60" fxLayout="column" fxLayoutAlign="center center" class="left-side">
+    <span class="square"></span>
+    <span class="diamond"></span>
+    <span class="star-six"></span>
+    <span class="square square-right"></span>
+    <span class="square square-left"></span>
+    <span class="square square-center"></span>
+    <span class="rectangle"></span>
+    <span class="rectangle rectangle-top"></span>
+    <h1>
+      Application build with Angular.io, Angular Material and Koa server
+    </h1>
+    <p>This is a mockup application that include Angular Material and Angular.io functionality.</p>
+  </div>
+</div>
+
+
+

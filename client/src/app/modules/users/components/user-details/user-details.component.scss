@@ -1,0 +1,50 @@
+@import '../../../../../styles/variables';
+
+:host{
+  mat-toolbar{
+    box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .header {
+    height: 20%;
+    min-height: 20%;
+    max-height: 20%;
+    background-color: $mat-tertiary-color;
+    padding: 24px;
+  }
+
+  button{
+    margin-right: 20px;
+
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+
+  .avatar.huge {
+    width: 96px;
+    min-width: 96px;
+    height: 96px;
+    line-height: 96px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 1px solid $white;
+  }
+
+  .content {
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 4px;
+  }
+
+
+  .info-line{
+    padding-bottom: 20px;
+  }
+}

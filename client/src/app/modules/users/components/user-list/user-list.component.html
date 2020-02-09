@@ -1,0 +1,59 @@
+<mat-toolbar-row>
+  <h1>Users</h1>
+  <button mat-flat-button color="primary" (click)="addNewUser()">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</mat-toolbar-row>
+
+<mat-spinner *ngIf="isLoadingUsers"></mat-spinner>
+
+<div class="padding-15">
+  <mat-card *ngIf="users.length">
+    <!--<table mat-table [dataSource]="users" class="example-table" matSort matSortActive="prod_name" matSortDisableClear-->
+           <!--matSortDirection="asc" [@fade]="'in'">-->
+    <mat-table [dataSource]="users" class="example-table" matSort matSortActive="user_name" matSortDisableClear
+           matSortDirection="asc">
+      <ng-container matColumnDef="username">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">{{user.username}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">{{user.firstName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">{{user.lastName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+      </ng-container>
+
+      <!--<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+      <!--<tr mat-row *matRowDef="let user; columns: displayedColumns;" [routerLink]="['/users/', user._id]"></tr>-->
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let user; columns: displayedColumns;" [routerLink]="['user-details/', user._id]"></mat-row>
+    </mat-table>
+
+    <!--<mat-card-actions></mat-card-actions>-->
+  </mat-card>
+
+  <div *ngIf="!users.length && !isLoadingUsers">
+    No users found.
+  </div>
+
+  <!--<div *ngIf="!usersSelected && !isLoadingUsers">-->
+    <!--<p>Select a user</p>-->
+  <!--</div>-->
+
+  <!--<div style="margin-top: 2rem">-->
+    <!--<router-outlet (activate)="usersSelected = true" (deactivate)="usersSelected = false"></router-outlet>-->
+  <!--</div>-->
+
+
+</div>

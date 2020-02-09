@@ -1,0 +1,57 @@
+:host {
+  .container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .mat-card{
+      margin: 20px;
+    }
+  }
+
+  .grid {
+    padding: 50px 20px;
+    height: 100%;
+
+    .grid {
+      padding: 0;
+
+    }
+
+    .grid-item-50 {
+      padding: 5%;
+      &:first-of-type {
+        width: 100%;
+        height: 65vh;
+        overflow: hidden;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        background-color: #f2f2f2;
+        box-shadow: 1px 1px 5px 0 rgba(155, 155, 155, 0.5);
+
+        img {
+          text-align: center;
+          display: block;
+        }
+      }
+
+      &:last-of-type{
+        overflow-y: auto;
+      }
+    }
+
+
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    margin: 15px auto;
+    display: block;
+  }
+
+
+}

@@ -1,0 +1,101 @@
+<div class="container" *ngIf="user$ | async as user; else loadingUser">
+  <mat-toolbar color="">
+    <a mat-button routerLink (click)="location.back()">
+      <i class="material-icons">
+        keyboard_backspace
+      </i>
+      Back </a>
+  </mat-toolbar>
+  <div class="header p-24" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
+       fxLayoutAlign.gt-sm="space-between end">
+    <div class="user-info" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"
+         fxLayoutAlign.gt-sm="start center">
+      <img class="profile-image avatar huge ng-trigger ng-trigger-animate" src="assets/images/users.png">
+      <div class="name ng-trigger ng-trigger-animate"> {{user.firstName}} {{user.lastName}} </div>
+    </div>
+    <div class="actions" fxLayout="row" fxLayoutAlign="end center">
+      <button aria-label="Follow" color="accent" mat-raised-button>Follow
+      </button>
+      <button aria-label="Send Message" color="primary"
+              mat-raised-button>Send Message
+      </button>
+    </div>
+  </div>
+
+  <div class="content">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">about</mat-icon>
+          About
+        </ng-template>
+
+        <mat-card fxLayout="row" fxFlex="auto">
+          <mat-card-content>
+            <div class="info-line">
+              <div class="title">Username</div>
+              <div class="info">{{user.username}}</div>
+            </div>
+            <div class="info-line">
+              <div class="title">First Name</div>
+              <div class="info">{{user.firstName}}</div>
+            </div>
+
+            <div class="info-line">
+              <div class="title">Last Name</div>
+              <div class="info">{{user.lastName}}</div>
+            </div>
+
+            <div class="info-line">
+              <div class="title">Age</div>
+              <div class="info">{{user.age}}</div>
+            </div>
+
+            <div class="info-line">
+              <div class="title">Locations</div>
+
+              <div class="info location ng-tns-c46-43" fxLayout="row" fxLayoutAlign="start center">
+                <span class="ng-tns-c46-43">London, UK</span>
+                <mat-icon class="s-16 ml-4 mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                          aria-hidden="true">location_on
+                </mat-icon>
+              </div>
+              <div class="info location ng-tns-c46-43" fxLayout="row" fxLayoutAlign="start center">
+                <span class="ng-tns-c46-43">New York, USA</span>
+                <mat-icon class="s-16 ml-4 mat-icon notranslate material-icons mat-icon-no-color" role="img"
+                          aria-hidden="true">location_on
+                </mat-icon>
+              </div>
+            </div>
+            <div class="info-line">
+              <div class="title">About Me</div>
+              <div
+                class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis,
+              sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue,
+              vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">timeline</mat-icon>
+          Timeline
+        </ng-template>
+        Timeline
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">photos</mat-icon>
+          Photos & Vidoes
+        </ng-template>
+
+        Content 3
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<ng-template #loadingUser>
+  <mat-spinner></mat-spinner>
+</ng-template>

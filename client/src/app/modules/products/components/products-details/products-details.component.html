@@ -1,0 +1,32 @@
+<div class="container" >
+  <mat-toolbar color="">
+    <a mat-button routerLink (click)="location.back()">
+      <i class="material-icons">
+        keyboard_backspace
+      </i>
+      Back </a>
+  </mat-toolbar>
+  <div class="grid" *ngIf="(product$ | async) as product; else loadingProduct">
+    <div class="grid-item-50">
+      <img src="{{product.imageUrl}}" alt="{{product.name}}">
+    </div>
+    <div class="grid-item-50">
+      <h1>{{product.name}}</h1>
+      <span class="">ID {{product._id}}</span>
+      <div class="grid">
+        <div class="grid-item-70">
+          <p>{{product.description}}</p>
+        </div>
+        <div class="grid-item-30">
+          <span class="price">{{product.price}} $</span>
+          <span class="number">{{product.quantity}} quantity</span>
+          <button mat-raised-button color="primary">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loadingProduct>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

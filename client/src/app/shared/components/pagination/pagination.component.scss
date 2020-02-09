@@ -1,0 +1,88 @@
+//@import 'variables';
+//
+//:host-context {
+//  display: flex;
+//  height: auto;
+//  flex: 0 0 auto;
+//  background-color: $white;
+//  @include rem('padding', 3px);
+//  border: 1px solid $border-color;
+//  border-radius: $border-radius;
+//
+//
+//  .form-inline {
+//    .input-group {
+//      margin-left: $spacer-5;
+//      margin-right: $spacer-5;
+//    }
+//
+//    .input-group {
+//      .btn {
+//        color: $secondary;
+//        font-size: $font-size-xxs;
+//        font-weight: $font-weight-medium;
+//        @include rem('padding', 6px);
+//
+//        .fa {
+//          font-size: $font-size-xxs;
+//        }
+//
+//        &:disabled {
+//          background-color: $lighter-grey;
+//          .fa {
+//            color: $mid-grey;
+//          }
+//        }
+//
+//        &:hover {
+//          background-color: $gray-300;
+//          border-color: $border-color;
+//        }
+//      }
+//    }
+//
+//    input {
+//      text-align: center;
+//      padding: inherit;
+//      @include rem('width', 35px);
+//      height: auto;
+//    }
+//
+//    .form-group {
+//      .form-control:not([size]):not([multiple]) {
+//        height: auto;
+//        background-color: $white;
+//        @include rem('padding', 1px);
+//        border: 1px solid $border-color;
+//        margin-left: $spacer-5;
+//        box-sizing: border-box;
+//
+//        &:hover {
+//          background-color: $gray-300;
+//
+//          option{
+//            background-color: $white;
+//          }
+//        }
+//
+//        &:disabled{
+//          background-color: $lighter-grey;
+//          color: $mid-grey;
+//          cursor: not-allowed;
+//        }
+//      }
+//    }
+//
+//    & + .form-inline {
+//      @include rem('padding-left', 10px);
+//      border-left: 1px solid $border-color;
+//      margin-left: $spacer-10;
+//    }
+//
+//    .form-control{
+//      &:focus{
+//        box-shadow: 0 0 0 0.2rem rgba(167, 167, 167, 0.25);
+//      }
+//    }
+//  }
+//}

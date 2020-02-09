@@ -1,0 +1,76 @@
+:host{
+  .panel-right{
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .avatar {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 8px 0 0;
+    margin-right: 8px;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .toolbar-separator {
+    height: 64px;
+    width: 1px;
+    background: rgba(0,0,0,.12);
+    display: block;
+  }
+
+  .mat-button{
+    cursor: pointer;
+    padding: 0 12px;
+    margin: 0;
+    min-width: 64px;
+    height: 64px;
+    line-height: 64px;
+    margin-right: 10px;
+    max-width: 80px;
+    background-clip: padding-box;
+  }
+
+  .mat-list-header{
+    padding: 20px;
+  }
+
+  .flag{
+    margin-right: 5px;
+    max-width: 50%;
+  }
+
+  .panel-right{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.35);
+    ransition-property: transform,width,min-width,max-width,-webkit-transform;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    background: #fafafa;
+    height: calc(100vh - 64px);
+  }
+}
